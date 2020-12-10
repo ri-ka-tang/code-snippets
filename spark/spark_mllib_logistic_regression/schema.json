@@ -1,0 +1,139 @@
+{
+    "type": "struct",
+    "fields": [
+        {
+            "name": "numClasses",
+            "type": "integer",
+            "nullable": false,
+            "metadata": {}
+        },
+        {
+            "name": "numFeatures",
+            "type": "integer",
+            "nullable": false,
+            "metadata": {}
+        },
+        {
+            "name": "interceptVector",
+            "type": {
+                "type": "udt",
+                "class": "org.apache.spark.ml.linalg.VectorUDT",
+                "pyClass": "pyspark.ml.linalg.VectorUDT",
+                "sqlType": {
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "type",
+                            "type": "byte",
+                            "nullable": false,
+                            "metadata": {}
+                        },
+                        {
+                            "name": "size",
+                            "type": "integer",
+                            "nullable": true,
+                            "metadata": {}
+                        },
+                        {
+                            "name": "indices",
+                            "type": {
+                                "type": "array",
+                                "elementType": "integer",
+                                "containsNull": false
+                            },
+                            "nullable": true,
+                            "metadata": {}
+                        },
+                        {
+                            "name": "values",
+                            "type": {
+                                "type": "array",
+                                "elementType": "double",
+                                "containsNull": false
+                            },
+                            "nullable": true,
+                            "metadata": {}
+                        }
+                    ]
+                }
+            },
+            "nullable": true,
+            "metadata": {}
+        },
+        {
+            "name": "coefficientMatrix",
+            "type": {
+                "type": "udt",
+                "class": "org.apache.spark.ml.linalg.MatrixUDT",
+                "pyClass": "pyspark.ml.linalg.MatrixUDT",
+                "sqlType": {
+                    "type": "struct",
+                    "fields": [
+                        {
+                            "name": "type",
+                            "type": "byte",
+                            "nullable": false,
+                            "metadata": {}
+                        },
+                        {
+                            "name": "numRows",
+                            "type": "integer",
+                            "nullable": false,
+                            "metadata": {}
+                        },
+                        {
+                            "name": "numCols",
+                            "type": "integer",
+                            "nullable": false,
+                            "metadata": {}
+                        },
+                        {
+                            "name": "colPtrs",
+                            "type": {
+                                "type": "array",
+                                "elementType": "integer",
+                                "containsNull": false
+                            },
+                            "nullable": true,
+                            "metadata": {}
+                        },
+                        {
+                            "name": "rowIndices",
+                            "type": {
+                                "type": "array",
+                                "elementType": "integer",
+                                "containsNull": false
+                            },
+                            "nullable": true,
+                            "metadata": {}
+                        },
+                        {
+                            "name": "values",
+                            "type": {
+                                "type": "array",
+                                "elementType": "double",
+                                "containsNull": false
+                            },
+                            "nullable": true,
+                            "metadata": {}
+                        },
+                        {
+                            "name": "isTransposed",
+                            "type": "boolean",
+                            "nullable": false,
+                            "metadata": {}
+                        }
+                    ]
+                }
+            },
+            "nullable": true,
+            "metadata": {}
+        },
+        {
+            "name": "isMultinomial",
+            "type": "boolean",
+            "nullable": false,
+            "metadata": {}
+        }
+    ]
+}
